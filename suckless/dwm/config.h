@@ -66,14 +66,17 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run","-c", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char* roficmd[] =  { "rofi", "-show", "run", NULL};
-static const char* flame[] =	{"flameshot", "gui", NULL};
+static const char* flamecmd[] =	{"flameshot", "gui", NULL};
+static const char* lockscrcmd[] = {"betterlockscreen", "-l", NULL};
+
 
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,						XK_y,      spawn,		   {.v = flame   } },
+	{ MODKEY,						XK_y,      spawn,		   {.v = flamecmd } },
+	{ MODKEY,						XK_x,      spawn,		   {.v = lockscrcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
