@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sh ~/.local/share/dwm/statusbar.sh
+sh ~/.local/share/dwm/statusbar.sh &
 picom --config /home/blank/.config/picom/picom.conf &
 nm-applet &
 setxkbmap tr &
