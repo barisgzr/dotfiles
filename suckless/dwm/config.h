@@ -10,7 +10,7 @@ static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
 static const char *fonts[]          = {"Hack:size=10", "Symbols Nerd Font:size=10" };
 static const char dmenufont[]       = "Hack:size=10";
-static unsigned int baralpha        = 0xF0;
+static unsigned int baralpha        = 0xD0;
 static unsigned int borderalpha     = OPAQUE;
 static const char col_gray1[]       = "#020914";
 static const char col_gray2[]       = "#a8856c";
@@ -19,8 +19,8 @@ static const char col_gray4[]       = "#f1be9b";
 static const char col_cyan[]        = "#63576E";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_cyan },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
 };
 
 
@@ -76,7 +76,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_y,      spawn,		   {.v = flamecmd } },
-	{ MODKEY,						XK_x,      spawn,		   {.v = lockscrcmd } },
+	{ MODKEY|ShiftMask, 			XK_x,      spawn,		   {.v = lockscrcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -111,7 +111,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
 
 /* button definitions */
