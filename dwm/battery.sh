@@ -8,7 +8,7 @@ if ! [ -f $BAT ]; then
 fi
 
 if [ $(cat /sys/class/power_supply/BAT1/uevent | head -n 3 | tail -n 1 | awk -F = '{print $2}') = "Charging" ]; then
-	echo "$(cat $BAT)% "
+	echo "$(cat $BAT)%  "
 else
 	for x in $(cat $BAT);
 	do

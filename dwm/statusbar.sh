@@ -1,5 +1,9 @@
 #!/bin/sh
 
+volume(){
+amixer sget Master | awk -F"[][]" '/Left:/ { print $2 }'
+}
+
 dayanddate () {
 	LC_TIME="en_US.UTF-8" date '+%e %B %G %A'
 }
@@ -16,5 +20,5 @@ timedate(){
 	date '+%H:%M:%S '
 }
 while :; do 
-	xsetroot -name "$(dayanddate)"";""$(internet)"" $(battery)""$(timedate)"
+	xsetroot -name "$(dayanddate)"";""$(internet)"" $(battery)"" $(volume)"" $(timedate)"
 done
