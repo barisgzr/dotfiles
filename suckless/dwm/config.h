@@ -68,7 +68,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char* roficmd[] =  { "rofi", "-show", "run", NULL};
 static const char* flamecmd[] =	{"flameshot", "gui", NULL};
 static const char* lockscrcmd[] = {"betterlockscreen", "-l", NULL};
-
+static const char* bravecmd[] = {"brave", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -77,7 +77,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_y,      spawn,		   {.v = flamecmd } },
 	{ MODKEY|ShiftMask, 			XK_x,      spawn,		   {.v = lockscrcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_t,      togglebar,      {0} },
+	{ MODKEY,                       XK_b,      spawn,	       {.v = bravecmd} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
